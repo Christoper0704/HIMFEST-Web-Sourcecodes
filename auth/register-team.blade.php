@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row" style="margin-top:45px">
             <div class="col-md-4 col-md-offset-4">
-                <h4>Register</h4><hr>
+                <h4>Register Team</h4><hr>
                 <form action="{{ route('auth.save') }}" method="POST">
 
                 @if(Session::get('Success'))
@@ -29,23 +29,26 @@
 
                 @csrf
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" value="{{ old('name') }}">
+                        <label>Team Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter your team name" value="{{ old('name ') }}">
                         <span class="text-danger">@error('name'){{ $message }} @enderror</span>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Enter your email address" value="{{ old('email') }}">
-                        <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <input type="password" class="form-control" name="password" placeholder="Enter your password">
                         <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                     </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select name="category" id="category" class="form-control">
+                            <option value="SMA/SMK">SMA/SMK</option>
+                            <option value="Mahasiswa">Mahasiswa</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="submit" name="submit" value="1">
                     <button type="submit" class="btn btn-block btn-primary">Sign in</button>
                     <br>
-                    <a href="{{ route('auth.login') }}">Already have an acoount? Login here!</a>
+                    <a href="{{ route('auth.login') }}">Already have an acount? Login here!</a>
                 </form>
                 </div>
         </div>

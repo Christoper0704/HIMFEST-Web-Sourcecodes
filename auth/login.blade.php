@@ -22,9 +22,9 @@
 
                 @csrf
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter your email adress" value="{{ old('email') }}">
-                        <span class="text-danger">@error('email'){{ $message }} @enderror</span>
+                        <label>Team Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter your team name" value="{{ old('name') }}">
+                        <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
