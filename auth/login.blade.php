@@ -33,7 +33,7 @@
                     </div>
                     <button type="submit" class="btn btn-block btn-primary">Login</button>
                     <br>
-                    <a href="{{ route('auth.register') }}">Don't have an acoount? Register here!</a>
+                    <a href="{{ route('auth.register-team') }}">Don't have an acoount? Register here!</a>
                 </form>
                 </div>
         </div>
