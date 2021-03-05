@@ -31,6 +31,7 @@
                     <div class="form-group">
                         <label>Member Name</label>
                         <input type="text" class="form-control" name="name" placeholder="Enter your full name">
+                        <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
@@ -51,7 +52,7 @@
                         <input type="file" name="studentcard" id="studentcard">
                     </div>
                     <input type="hidden" id="submit" name="submit" value="2">
-                    <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
                 </form>
                 </div>
         </div>
