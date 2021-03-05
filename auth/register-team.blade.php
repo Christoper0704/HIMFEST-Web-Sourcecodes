@@ -46,7 +46,7 @@
                         </select>
                     </div>
                     <input type="hidden" id="submit" name="submit" value="1">
-                    <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
                     <br>
                     <a href="{{ route('auth.login') }}">Already have an acount? Login here!</a>
                 </form>
