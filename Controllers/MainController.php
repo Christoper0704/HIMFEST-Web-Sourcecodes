@@ -20,12 +20,15 @@ class MainController extends Controller
     function save(Request $request){
         
         //Validate requests
-
         $parameter = $request->submit;
 
         //Insert data into table Team
         if($parameter == "1")
         {
+            $request->validate([
+                'name'=>'required',
+                'password'=>'required|min:6|max:12'
+            ]);
             $team = new Team;
             $team->name = $request->name;
             $team->password = Hash::make($request->password);
@@ -40,7 +43,11 @@ class MainController extends Controller
         };
         if($parameter == "2")
         {
-
+            $request->validate([
+                'name'=>'required',
+                'email'=>'required|email',
+                'phone'=>'required'
+            ]);
             //Insert data into table Member
             $member = new Member;
             $member->name = $request->name;
@@ -61,14 +68,13 @@ class MainController extends Controller
     function check(Request $request){
         //Validate requests
         $request->validate([
-            'name'=>'required|name',
-            'password'=>'required|min:5|max:12'
+            'name'=>'required',
+            'password'=>'required'
         ]);
-
         $userInfo = Team::where('name','=', $request->name)->first();
 
         if(!$userInfo){
-            return back()->with('fail','We do not recognize your email address');
+            return back()->with('fail','We do not recognize your team name');
         }else{
             //check password
             if(Hash::check($request->password, $userInfo->password)){
